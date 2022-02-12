@@ -1,0 +1,299 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Farm Cart</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand');
+*{
+    font-family: 'quicksand', Arial, Helvetica, sans-serif;
+}
+html{
+    height: 100vh;
+}
+body{
+    height: 100%;
+    background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 70%;
+    height: 89%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+    /* overflow: auto; */
+}
+
+.header{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 15%;
+    align-items: center;
+}
+.header1{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+
+}
+.details{
+    font-size: 20px;
+    font-weight: 800;
+    color: #202020;
+}
+.cartDetails{
+    height: 280px;
+    overflow-y: auto;
+}
+.Heading{
+    font-size: 20px;
+    font-weight: 700;
+    color: #2F3841;
+}
+
+.Action{
+    font-size: 14px;
+    font-weight: 600;
+    color: #E44C4C;
+    cursor: pointer;
+    border-bottom: 1px solid #E44C4C;
+}
+
+.Cart-items{
+    margin: auto;
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image{
+    font-size:5rem;
+    /* width:100%; */
+    text-align:center;
+    /* width: 15%;
+    text-align: center; */
+   }
+.about{
+    height: 100%;
+}
+.title{
+    padding-top: 5px;
+ line-height: 10px;
+ font-size: 32px;
+ font-weight: 800;
+ color: #202020;
+}
+
+.subtitle{
+    line-height: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #909090;
+}
+
+.counter{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: #202020;
+    cursor: pointer;
+}
+.count{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #202020;
+}
+.prices{
+    height: 100%;
+    text-align: right;
+   }
+.amount{
+    padding-top: 20px;
+    font-size: 26px;
+    font-weight: 800;
+    color: #202020;
+}
+
+.particularPrice{
+    /* padding-top: 20px; */
+    font-size: 26px;
+    font-weight: 800;
+    color: #202020;
+}
+
+/* .save{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1687d9;
+    cursor: pointer;
+} */
+.remove{
+    padding-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #E44C4C;
+    cursor: pointer;
+}
+
+hr{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.checkout{
+    float: right;
+    margin-right: 5%;
+    width: 28%;
+}
+.total{
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.Subtotal{
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #202020;
+}
+.items{
+    font-size: 16px;
+    font-weight: 500;
+    color: #909090;
+    line-height: 10px;
+}
+.total-amount{
+    font-size: 36px;
+    font-weight: 900;
+    color: #202020;
+}
+.button{
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #202020;
+}
+.button:hover{
+    box-shadow: 0px 25px 40px #1687d933;
+    transition: .1s;
+    transform: scaleX(1.2);
+}
+  
+input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  .cart-conatiner{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .empty-cart{
+      font-size: 100px;
+  }
+  .empty-txt{
+      margin: 9px;
+      font-weight: 800;
+  }
+  .login{
+      text-decoration: none;
+      background: linear-gradient(to bottom right, #9be15d, #00e3ae);
+      padding: 19px;
+      /* margin: 9px; */
+      /* width: 18px; */
+      color: black;
+      font-weight: 600;
+      border-radius: 16px;
+      /* border: 2px solid ; */
+  }
+  .login:hover{
+    box-shadow: 0px 25px 40px #1687d933;
+    transition: .1s;
+    transform: scaleX(1.2);
+  }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h3 class="Heading">Shopping Cart</h3>
+            <h5 class="Action"><a href="/cart/removeAll">Remove all</a></h5>
+        </div>
+        <div class="header1">
+            <div class="details">Item Pic</div>
+            <div class="details">Item Name</div>
+            <div class="details">Quantity</div>
+            <div class="details">Price</div>
+            <div class="details">Total  Price
+            </div>
+        </div>
+
+        <div class="cartDetails">
+            {%PRODUCT_ITEMS%}
+        </div>
+
+        <hr>
+        <div class="checkout">
+            <div class="total">
+                <div>
+                    <div class="Subtotal">Sub-Total</div>
+                    <div class="items">{%cartLength%} items</div>
+                </div>
+                <div class="total-amount">${%subTotal%}</div>
+            </div>
+            <button class="button">Checkout</button>
+        </div>
+    </div>
+</body>
+
+</html>

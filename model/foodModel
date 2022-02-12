@@ -1,0 +1,39 @@
+const mongoose=require('mongoose');
+
+//defining database schema
+var foodSchema = new mongoose.Schema({
+    productName:{
+        type:String,
+        required:[true,'A column have a name'],
+        unique:[true,'Name should be unique']
+    },
+    price:{
+        type:Number,
+        required:[true,'Price should not be empty']
+    },
+    quantity:{
+        type:Number,
+        default:1
+    },
+    description:{
+        type:String,
+        required:[true,'Details should be there regarding food']
+    },
+    nutrients:{
+        type:String,
+        default:"unknown"
+    },
+    from:{
+        type:String,
+        default:"unknown"
+    },
+    image:{
+        type:"string"
+    }
+}) ;
+// console.log(foodSchema);
+
+//defining model through database schema
+const Food = mongoose.model('Food',foodSchema);
+
+module.exports = Food;
